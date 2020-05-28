@@ -3,4 +3,8 @@ Rails.application.routes.draw do
 
 resources :products, only: [:index, :show]
 
+root 'products#index'
+  
+post '/', to: 'products#add'  
+
 end
