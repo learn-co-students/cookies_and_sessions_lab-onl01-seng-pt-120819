@@ -2,8 +2,8 @@
 <%= product %>
 <% end %>
 
-<%= form_tag products_path do %>
+<%= form_tag ({controller: 'products', action: 'add', method: 'post'}) do %>
 <label>Product:</label><br>
   <%= text_field_tag :product %><br>
-  <%= submit_tag "Add to cart">
+  <input type=submit value='add to cart'>
 <% end %>
