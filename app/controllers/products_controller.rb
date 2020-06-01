@@ -2,12 +2,11 @@ class ProductsController < ApplicationController
 
 
     def index
-        @product = session[:cart]
     end
 
     def add
-        @product = session[:cart]
-        cart << @product.id
+        cart << params[:product]
         render :index
     end
+        
 end
