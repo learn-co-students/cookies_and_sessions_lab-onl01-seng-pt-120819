@@ -1,13 +1,13 @@
 class ProductsController < ApplicationController
 
+
     def index
-        @products = Product.all
+        @product = session[:cart]
     end
 
     def add
-        @product= Product.find(params[:id])
-        cart = session[:cart] || []
+        @product = session[:cart]
         cart << @product.id
-        session[:cart] = cart
+        render :index
     end
 end

@@ -6,14 +6,4 @@ class ApplicationController < ActionController::Base
   def cart
      session[:cart] ||= []
   end
-
-  def homepage
-      @product = Product.find(params[:id])
-      cart = session[:cart] || []
-      cart << @product.id
-      session[:cart] = cart
-  end
-
-
-
 end
